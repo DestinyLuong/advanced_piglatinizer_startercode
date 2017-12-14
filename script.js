@@ -12,15 +12,18 @@ $(document).ready(function() {
     // otherwise it should return false.
     function wordStartsWithVowel(word) {
         word = $("#input").val();
-        if(word.charAt(0) === "a"){
+        
+        first = word.charAt(0)
+        
+        if(first === "a"){
             return true;
-        } else if(word.charAt(0) === "e"){
+        } else if(first === "e"){
             return true;
-        } else if(word.charAt(0) === "i"){
+        } else if(first === "i"){
             return true;
-        } else if(word.charAt(0) === "o"){
+        } else if(first === "o"){
             return true;
-        } else if(word.charAt(0) === "u"){
+        } else if(first === "u"){
             return true;
         } else {
             return false
@@ -29,19 +32,34 @@ $(document).ready(function() {
 
     // Appends "yay" to the end of the word and returns the word.
     function appendYayToWord(word) {
-
+        if(word === true){
+            word + "yay";
+            return word;
+        }
     }
 
     // Moves the first consonant to the end of the word, appends "ay" to the end of the word,
     // and returns the word.
     function convertWordWithConsonant(word) {
-
+        if(word === false){
+         firstC = word.charAt(0);
+         
+         word + firstC
+         return word;
+            
+        }
     }
 
     // If the word starts with a vowel, return the result of appendYayToWord.
     // Otherwise, return the result of convertWordWithConsonant.
     function convertWordToPigLatin(word) {
-
+        if(word === false){
+        word + "ay";
+        return word;
+        } else {
+            appendYayToWord(word);
+            return word;
+        }
     }
 
     // Create a click handler that takes is triggered when the user clicks the translate button.
