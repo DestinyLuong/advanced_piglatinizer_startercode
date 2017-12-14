@@ -8,12 +8,14 @@
 
 $(document).ready(function() {
 
+        var word = $("#input").val();
+        
     // This function should return true if the input word starts with a vowel,
     // otherwise it should return false.
     function wordStartsWithVowel(word) {
-        word = $("#input").val();
+
         
-        first = word.charAt(0)
+        var first = word.charAt(0);
         
         if(first === "a"){
             return true;
@@ -26,7 +28,7 @@ $(document).ready(function() {
         } else if(first === "u"){
             return true;
         } else {
-            return false
+            return false;
         }
     }
 
@@ -42,9 +44,9 @@ $(document).ready(function() {
     // and returns the word.
     function convertWordWithConsonant(word) {
         if(word === false){
-         firstC = word.charAt(0);
+         var firstC = word.charAt(0);
          
-         word + firstC
+         word + firstC;
          return word;
             
         }
@@ -66,4 +68,11 @@ $(document).ready(function() {
         // Gets a word from the input box
         // Transforms the word to pig latin
         // Displays the result on the screen in the output element
+        $("#translate").click(function(){
+           wordStartsWithVowel(word);
+           appendYayToWord(word);
+           convertWordWithConsonant(word);
+           convertWordToPigLatin(word);
+           $("#final").append(word);
+        });
 });
