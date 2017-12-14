@@ -11,7 +11,20 @@ $(document).ready(function() {
     // This function should return true if the input word starts with a vowel,
     // otherwise it should return false.
     function wordStartsWithVowel(word) {
-
+        word = $("#input").val();
+        if(word.charAt(0) === "a"){
+            return true;
+        } else if(word.charAt(0) === "e"){
+            return true;
+        } else if(word.charAt(0) === "i"){
+            return true;
+        } else if(word.charAt(0) === "o"){
+            return true;
+        } else if(word.charAt(0) === "u"){
+            return true;
+        } else {
+            return false
+        }
     }
 
     // Appends "yay" to the end of the word and returns the word.
