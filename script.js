@@ -15,17 +15,20 @@ $(document).ready(function() {
     function wordStartsWithVowel(word) {
 
         
-        var first = word.charAt(0);
-        
-        if(first === "a"){
+        if(word.charAt(0) === "a"){
+
             return true;
-        } else if(first === "e"){
+        } else if(word.charAt(0)=== "e"){
+
             return true;
-        } else if(first === "i"){
+        } else if(word.charAt(0) === "i"){
+
             return true;
-        } else if(first === "o"){
+        } else if(word.charAt(0)=== "o"){
+
             return true;
-        } else if(first === "u"){
+        } else if(word.charAt(0) === "u"){
+
             return true;
         } else {
             return false;
@@ -34,8 +37,10 @@ $(document).ready(function() {
 
     // Appends "yay" to the end of the word and returns the word.
     function appendYayToWord(word) {
-        if(word === true){
-            word + "yay";
+        if(wordTwo === true){
+           word = word + "yay";
+            return word;
+        } else{
             return word;
         }
     }
@@ -49,19 +54,19 @@ $(document).ready(function() {
          word + firstC;
          return word;
             
+        } else{
+            return word;
         }
     }
 
     // If the word starts with a vowel, return the result of appendYayToWord.
     // Otherwise, return the result of convertWordWithConsonant.
     function convertWordToPigLatin(word) {
-        if(word === false){
-        word + "ay";
-        return word;
-        } else {
-            appendYayToWord(word);
-            return word;
-        }
+           wordStartsWithVowel(word);
+           appendYayToWord(word);
+           convertWordWithConsonant(word);
+           convertWordToPigLatin(word);
+           
     }
 
     // Create a click handler that takes is triggered when the user clicks the translate button.
@@ -69,10 +74,6 @@ $(document).ready(function() {
         // Transforms the word to pig latin
         // Displays the result on the screen in the output element
         $("#translate").click(function(){
-           wordStartsWithVowel(word);
-           appendYayToWord(word);
-           convertWordWithConsonant(word);
-           convertWordToPigLatin(word);
-           $("#final").append(word);
+        
         });
 });
