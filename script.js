@@ -77,9 +77,18 @@ $(document).ready(function() {
         // Displays the result on the screen in the output element
        
         $("#translate").click(function(){
-            debugger;
+            //debugger;
             var word = $("#input").val();
-            $("#final").append(convertWordToPigLatin(word));
+            var run = word.split(" ");
+            for(var words = 0; run.length > words; words++){
+             $("#final").append(convertWordToPigLatin(run[words]));
+             $("#final").append(" ");
+                
+            }
             
+        });
+        
+        $("#reset").click(function(){
+            location.reload();
         });
 });
